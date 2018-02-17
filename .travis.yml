@@ -1,0 +1,6 @@
+jobs:
+  include:
+    - stage: write
+      script: bash -c 'echo "it's my message" > myfile; cat myfile'
+    - stage: read
+      script: bash -c 'cat myfile'
