@@ -1,6 +1,9 @@
 jobs:
   include:
     - stage: write
+      cache:
+        directories:
+        - $HOME
       script: bash -c 'echo "it is my message" > myfile; cat myfile'
     - stage: read
       script: bash -c 'cat myfile'
