@@ -1,6 +1,4 @@
-apt:
-  packages:
-  - dejagnu
+
 
 jobs:
   include:
@@ -10,9 +8,11 @@ jobs:
         - $HOME
       script: bash -c 'echo "it is my message" > myfile; cat myfile'
     - stage: dejagnu lookup
-      apt:
-        packages:
-        - dejagnu
+      sudo: required
+      addons:
+        apt:
+          packages:
+          - dejagnu
       script: bash -c 'runtest my.exp'
     - stage: read
       cache:
