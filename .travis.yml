@@ -6,4 +6,7 @@ jobs:
         - $HOME
       script: bash -c 'echo "it is my message" > myfile; cat myfile'
     - stage: read
+      cache:
+        directories:
+        - $HOMR
       script: bash -c 'cat myfile'
