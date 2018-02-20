@@ -9,10 +9,14 @@ cache:
   directories:
   - $HOME
 
+env:
+  - MESSAGE='its my message'
+  - MESSAGE='its my other message'
+
+script: bash -c 'echo "$MESSAGE" > myfile; cat myfile'
+
 jobs:
   include:
-    - stage: write
-      script: bash -c 'echo "it is my message" > myfile; cat myfile'
     - stage: dejagnu lookup
       script: bash -c 'runtest my.exp'
     - stage: read
