@@ -18,6 +18,8 @@ script: bash -c 'echo "$MESSAGE" > myfile; cat myfile'
 jobs:
   include:
     - stage: dejagnu lookup
+      env:
+      - MESSAGE='its my other message'
       script: bash -c 'runtest my.exp'
     - stage: read
       script: bash -c 'cat myfile'
