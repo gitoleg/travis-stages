@@ -1,5 +1,7 @@
+language: c
 
 sudo: required
+
 addons:
   apt:
     packages:
@@ -13,6 +15,7 @@ env:
   - MESSAGE='its my message'
   - MESSAGE='its my other message'
 
+stage: build
 script: bash -c 'echo "$MESSAGE" > myfile; cat myfile'
 
 jobs:
