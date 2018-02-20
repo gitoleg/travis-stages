@@ -24,6 +24,6 @@ jobs:
       env:
       - MESSAGE='its my other message'
       script: bash -c 'runtest my.exp'
-    - script: bash -c 'runtest my.exp'
+      - script: bash -c 'runtest my.exp'
     - stage: read
       script: bash -c 'cat myfile'
